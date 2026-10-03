@@ -185,14 +185,14 @@ jobs:
         run: |
           docker build \
             -f backend/Dockerfile.prod \
-            -t ghcr.io/${{ github.repository }}-backend:latest \
-            -t ghcr.io/${{ github.repository }}-backend:${{ github.sha }} \
+            -t ghcr.io/arthurfeitosa05/semana5-containerizacao-cicd-backend:latest \
+            -t ghcr.io/arthurfeitosa05/semana5-containerizacao-cicd-backend:${{ github.sha }} \
             backend
 
       - name: Publicar backend no GHCR
         run: |
-          docker push ghcr.io/${{ github.repository }}-backend:latest
-          docker push ghcr.io/${{ github.repository }}-backend:${{ github.sha }}
+          docker push ghcr.io/arthurfeitosa05/semana5-containerizacao-cicd-backend:latest
+          docker push ghcr.io/arthurfeitosa05/semana5-containerizacao-cicd-backend:${{ github.sha }}
 
 
   deploy-frontend:
@@ -218,11 +218,11 @@ jobs:
         run: |
           docker build \
             -f frontend/Dockerfile.prod \
-            -t ghcr.io/${{ github.repository }}-frontend:latest \
-            -t ghcr.io/${{ github.repository }}-frontend:${{ github.sha }} \
+            -t ghcr.io/arthurfeitosa05/semana5-containerizacao-cicd-frontend:latest \
+            -t ghcr.io/arthurfeitosa05/semana5-containerizacao-cicd-frontend:${{ github.sha }} \
             frontend
 
       - name: Publicar frontend no GHCR
         run: |
-          docker push ghcr.io/${{ github.repository }}-frontend:latest
-          docker push ghcr.io/${{ github.repository }}-frontend:${{ github.sha }}
+          docker push ghcr.io/arthurfeitosa05/semana5-containerizacao-cicd-frontend:latest
+          docker push ghcr.io/arthurfeitosa05/semana5-containerizacao-cicd-frontend:${{ github.sha }}
